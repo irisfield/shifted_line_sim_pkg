@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- launch the simulator and dynamic reconfigure -->
+  <include file="$(find simple_sim_circleroad)/launch/circleroad.launch" />
+
+  <!-- launch the control unit node -->
+  <node pkg="shifted_line_sim_pkg" name="control_unit" type="control_unit.py" output="screen" />
+
+  <!-- launch the line follow node -->
+  <node pkg="shifted_line_sim_pkg" name="line_follow_outer" type="line_follow_outer.py" output="screen" />
+
+</launch>
